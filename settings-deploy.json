@@ -1,0 +1,11 @@
+{
+  "reset": true,
+  "testMode": "blank",
+  "public": {},
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL":
+        "mongodb://admin:Cdjuices1@ds143734.mlab.com:43734/customer-management"
+    }
+  }
+}
