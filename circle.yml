@@ -27,4 +27,4 @@ deployment:
     commands:
       - echo $PROD_SETTINGS > settings-production.json
       - echo $DEPLOYMENT_TOKEN > deployment_token.json
-      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=eu-west-1.galaxy-deploy.meteor.com meteor deploy --settings settings-production.json freight-for-all.net
+      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=eu-west-1.galaxy-deploy.meteor.com meteor deploy --settings settings-production.json www.freightforall.net
