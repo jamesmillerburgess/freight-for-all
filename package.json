@@ -2,7 +2,11 @@
   "name": "freight-for-all",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "acceptance-ci":
+      "chimp --browser=phantomjs --ddp=http://localhost:3000 --jasmine --path=tests/acceptance",
+    "unit-ci": "jest --config=jest.config.json --coverage --runInBand",
+    "codeclimate-test-reporter": "codeclimate-test-reporter"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
