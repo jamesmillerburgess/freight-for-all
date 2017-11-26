@@ -1,0 +1,46 @@
+.ocean-bill {
+  display: flex;
+  flex-direction: column;
+}
+.ocean-bill-upper-columns {
+  display: flex;
+}
+.ocean-bill-left-column,
+.ocean-bill-right-column {
+  flex-basis: 50%;
+}
+.ocean-bill-parties {
+  display: flex;
+  flex-direction: column;
+}
+.ocean-bill-routing-row {
+  display: flex;
+}
+.ocean-bill-routing-field {
+  flex-basis: 50%;
+}
+.ocean-bill-carrier input {
+  font-size: 26px;
+  width: 100%;
+  text-align: center;
+}
+.ocean-bill-type input {
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+}
+.ocean-bill-terms textarea {
+  width: 100%;
+  resize: none;
+}
+.ocean-bill-cargo {
+  display: flex;
+}
+.ocean-bill-description {
+  flex-basis: 55%;
+}
+.ocean-bill-packages,
+.ocean-bill-gross-weight,
+.ocean-bill-measurement {
+  flex-basis: 15%;
+}

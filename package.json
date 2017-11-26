@@ -5,20 +5,19 @@
     "start": "meteor run",
     "cover": "jest --config=jest.config.json --coverage --watchAll",
     "nocover": "jest --config=jest.config.json --watchAll",
-    "acceptance":
-      "chimp --browser=phantomjs --ddp=http://localhost:3000 --jasmine --path=tests/acceptance",
-    "acceptance-watch":
-      "chimp --browser=phantomjs --ddp=http://localhost:3000 --watch --jasmine --path=tests/acceptance",
-    "acceptance-ci":
-      "chimp --browser=phantomjs --ddp=http://localhost:3000 --jasmine --path=tests/acceptance",
+    "acceptance": "chimp --browser=phantomjs --ddp=http://localhost:3000 --jasmine --path=tests/acceptance",
+    "acceptance-watch": "chimp --browser=phantomjs --ddp=http://localhost:3000 --watch --jasmine --path=tests/acceptance",
+    "acceptance-ci": "chimp --browser=phantomjs --ddp=http://localhost:3000 --jasmine --path=tests/acceptance",
     "unit-ci": "jest --config=jest.config.json --coverage --runInBand",
-    "meteor-ci":
-      "TEST_BROWSER_DRIVER=phantomjs meteor test --port 4000 --driver-package meteortesting:mocha --once",
+    "meteor-ci": "TEST_BROWSER_DRIVER=phantomjs meteor test --port 4000 --driver-package meteortesting:mocha --once",
     "codeclimate-test-reporter": "codeclimate-test-reporter"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "meteor-node-stubs": "^0.3.2"
+    "lodash": "^4.17.4",
+    "meteor-node-stubs": "^0.3.2",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "babel-jest": "^21.2.0",

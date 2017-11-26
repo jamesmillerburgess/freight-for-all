@@ -10,6 +10,8 @@ caching-compiler@1.1.9
 caching-html-compiler@1.1.2
 callback-hook@1.0.10
 check@1.2.5
+coffeescript@1.0.17
+cosmos:browserify@0.8.4
 ddp@1.4.0
 ddp-client@2.2.0
 ddp-common@1.3.0
@@ -23,6 +25,7 @@ ecmascript-runtime-client@0.5.0
 ecmascript-runtime-server@0.5.0
 ejson@1.1.0
 es5-shim@4.6.15
+fourseven:scss@4.5.4
 geojson-utils@1.0.10
 hot-code-push@1.0.4
 html-tools@1.0.11
@@ -49,6 +52,7 @@ mongo-dev-server@1.1.0
 mongo-id@1.0.6
 npm-mongo@2.2.33
 ordered-dict@1.0.9
+pascoual:pdfkitx@0.0.3
 practicalmeteor:mocha-core@1.0.1
 promise@0.10.0
 random@1.0.10
