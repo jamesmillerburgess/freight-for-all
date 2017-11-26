@@ -1,0 +1,127 @@
+.ocean-bill {
+  display: flex;
+  flex-direction: column;
+}
+.ocean-bill .label {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+}
+.ocean-bill input,
+.ocean-bill textarea {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #888888;
+}
+.ocean-bill textarea {
+  resize: none;
+}
+.ocean-bill-upper-columns {
+  display: flex;
+}
+.ocean-bill-left-column,
+.ocean-bill-right-column {
+  flex-basis: 50%;
+}
+.ocean-bill-left-column {
+  padding-right: 1%;
+}
+.ocean-bill-right-column {
+  padding-left: 1%;
+}
+.ocean-bill-parties {
+  display: flex;
+  flex-direction: column;
+}
+.ocean-bill-party textarea {
+  height: 88px;
+}
+.ocean-bill-routing-row {
+  display: flex;
+}
+.ocean-bill-routing-field {
+  flex-basis: 50%;
+}
+.ocean-bill-carrier textarea {
+  font-size: 26px;
+  width: 100%;
+  text-align: center;
+  height: 66px;
+}
+.ocean-bill-type input {
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+}
+.ocean-bill-terms textarea {
+  width: 100%;
+  resize: none;
+  flex-grow: 1;
+  height: 278px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.ocean-bill-cargo {
+  display: flex;
+}
+.ocean-bill-description {
+  flex-basis: 55%;
+}
+.ocean-bill-description textarea {
+  height: 95px;
+}
+.ocean-bill-packages,
+.ocean-bill-gross-weight,
+.ocean-bill-measurement {
+  flex-basis: 15%;
+}
+.ocean-bill-charges {
+  display: flex;
+}
+.ocean-bill-freight-and-charges,
+.ocean-bill-revenue-tons,
+.ocean-bill-rate,
+.ocean-bill-per,
+.ocean-bill-prepaid,
+.ocean-bill-collect {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 16%;
+}
+.ocean-bill-freight-and-charges {
+  flex-basis: 20%;
+}
+.ocean-bill-declared-value input {
+  width: 20%;
+}
+.ocean-bill-declared-value .label-group {
+  display: flex;
+}
+.ocean-bill-declared-value .label:first-child {
+  flex-basis: 20%;
+}
+.ocean-bill-declared-value .label:last-child {
+  flex-basis: 80%;
+}
+.ocean-bill-payable-row {
+  display: flex;
+}
+.ocean-bill-exchange-rate,
+.ocean-bill-prepaid-at,
+.ocean-bill-payable-at {
+  flex-basis: 20%;
+}
+.ocean-bill-place-and-date-of-issue {
+  flex-basis: 40%;
+}
+.ocean-bill-total-prepaid-row {
+  padding-left: 20%;
+  display: flex;
+}
+.ocean-bill-total-prepaid-in-local-currency {
+  flex-basis: 40%;
+}
+.ocean-bill-shipped-on-board-the-vessel,
+.ocean-bill-date,
+.ocean-bill-by {
+  width: 30%;
+}
