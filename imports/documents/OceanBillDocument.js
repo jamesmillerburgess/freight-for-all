@@ -1,9 +1,9 @@
 import {} from 'meteor/pascoual:pdfkitx';
 
-const PDFDocument = global.PDFDocument;
-const blobStream = global.blobStream;
-
 const OceanBillDocument = (shipment, cb) => {
+  const PDFDocument = global.PDFDocument;
+  const blobStream = global.blobStream;
+
   if (!shipment) {
     return;
   }

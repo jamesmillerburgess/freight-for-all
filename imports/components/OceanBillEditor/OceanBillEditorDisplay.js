@@ -1,19 +1,15 @@
 import React from 'react';
 import './OceanBillEditor.scss';
 import OceanBillDocument from '../../documents/OceanBillDocument';
+import InputField from '../InputField/InputField';
+import TextareaField from '../TextareaField/TextareaField';
+
+export const handlePDF = url => window.open(url);
 
 export const OceanBillButton = props => (
   <button
     className="button-submit"
-    onClick={() =>
-      OceanBillDocument(props.document, url => {
-        const open = window.open(url);
-        if (open === null || typeof open === 'undefined') {
-          // TODO: Create themed alert
-          window.alert(`This URL has been blocked by your browser:\n${url}`);
-        }
-      })
-    }
+    onClick={() => OceanBillDocument(props.document, handlePDF)}
   >
     GENERATE PDF
   </button>
@@ -29,23 +25,23 @@ const OceanBillEditorDisplay = props => (
             <div className="ocean-bill-parties">
               <div className="ocean-bill-party">
                 <div className="label">SHIPPER</div>
-                <textarea
+                <TextareaField
                   value={props.document.shipper}
-                  onChange={e => props.setShipper(e.target.value)}
+                  onChange={props.setShipper}
                 />
               </div>
               <div className="ocean-bill-party">
                 <div className="label">CONSIGNEE</div>
-                <textarea
+                <TextareaField
                   value={props.document.consignee}
-                  onChange={e => props.setConsignee(e.target.value)}
+                  onChange={props.setConsignee}
                 />
               </div>
               <div className="ocean-bill-party">
                 <div className="label">NOTIFY PARTY</div>
-                <textarea
+                <TextareaField
                   value={props.document.notifyParty}
-                  onChange={e => props.setNotifyParty(e.target.value)}
+                  onChange={props.setNotifyParty}
                 />
               </div>
             </div>
@@ -53,48 +49,48 @@ const OceanBillEditorDisplay = props => (
               <div className="ocean-bill-routing-row">
                 <div className="ocean-bill-routing-field">
                   <div className="label">PRE-CARRIAGE BY</div>
-                  <input
+                  <InputField
                     value={props.document.preCarriageBy}
-                    onChange={e => props.setPreCarriageBy(e.target.value)}
+                    onChange={props.setPreCarriageBy}
                   />
                 </div>
                 <div className="ocean-bill-routing-field">
                   <div className="label">PLACE OF RECEIPT</div>
-                  <input
+                  <InputField
                     value={props.document.placeOfReceipt}
-                    onChange={e => props.setPlaceOfReceipt(e.target.value)}
+                    onChange={props.setPlaceOfReceipt}
                   />
                 </div>
               </div>
               <div className="ocean-bill-routing-row">
                 <div className="ocean-bill-routing-field">
                   <div className="label">VESSEL</div>
-                  <input
+                  <InputField
                     value={props.document.vessel}
-                    onChange={e => props.setVessel(e.target.value)}
+                    onChange={props.setVessel}
                   />
                 </div>
                 <div className="ocean-bill-routing-field">
                   <div className="label">PORT OF LOADING</div>
-                  <input
+                  <InputField
                     value={props.document.portOfLoading}
-                    onChange={e => props.setPortOfLoading(e.target.value)}
+                    onChange={props.setPortOfLoading}
                   />
                 </div>
               </div>
               <div className="ocean-bill-routing-row">
                 <div className="ocean-bill-routing-field">
                   <div className="label">PORT OF DISCHARGE</div>
-                  <input
+                  <InputField
                     value={props.document.portOfDischarge}
-                    onChange={e => props.setPortOfDischarge(e.target.value)}
+                    onChange={props.setPortOfDischarge}
                   />
                 </div>
                 <div className="ocean-bill-routing-field">
                   <div className="label">PLACE OF DELIVERY</div>
-                  <input
+                  <InputField
                     value={props.document.placeOfDelivery}
-                    onChange={e => props.setPlaceOfDelivery(e.target.value)}
+                    onChange={props.setPlaceOfDelivery}
                   />
                 </div>
               </div>
@@ -104,35 +100,35 @@ const OceanBillEditorDisplay = props => (
             <div className="ocean-bill-routing-row">
               <div className="ocean-bill-routing-field">
                 <div className="label">CUSTOMER REFERENCE</div>
-                <input
+                <InputField
                   value={props.document.customerReference}
-                  onChange={e => props.setCustomerReference(e.target.value)}
+                  onChange={props.setCustomerReference}
                 />
               </div>
               <div className="ocean-bill-routing-field">
                 <div className="label">BILL OF LADING NUMBER</div>
-                <input
+                <InputField
                   value={props.document.billOfLadingNumber}
-                  onChange={e => props.setBillOfLadingNumber(e.target.value)}
+                  onChange={props.setBillOfLadingNumber}
                 />
               </div>
             </div>
             <div className="ocean-bill-carrier">
-              <textarea
+              <TextareaField
                 value={props.document.carrier}
-                onChange={e => props.setCarrier(e.target.value)}
+                onChange={props.setCarrier}
               />
             </div>
             <div className="ocean-bill-type">
-              <input
+              <InputField
                 value={props.document.billType}
-                onChange={e => props.setBillType(e.target.value)}
+                onChange={props.setBillType}
               />
             </div>
             <div className="ocean-bill-terms">
-              <textarea
+              <TextareaField
                 value={props.document.terms}
-                onChange={e => props.setTerms(e.target.value)}
+                onChange={props.setTerms}
               />
             </div>
           </div>
@@ -142,85 +138,85 @@ const OceanBillEditorDisplay = props => (
             <div className="label">
               DESCRIPTION OF GOODS, MARKS AND NUMBERS, CONTAINER NUMBERS
             </div>
-            <textarea
+            <TextareaField
               value={props.document.description}
-              onChange={e => props.setDescription(e.target.value)}
+              onChange={props.setDescription}
             />
           </div>
           <div className="ocean-bill-packages">
             <div className="label">PACKAGES</div>
-            <input
+            <InputField
               value={props.document.packages1}
-              onChange={e => props.setPackages1(e.target.value)}
+              onChange={props.setPackages1}
             />
-            <input
+            <InputField
               value={props.document.packages2}
-              onChange={e => props.setPackages2(e.target.value)}
+              onChange={props.setPackages2}
             />
-            <input
+            <InputField
               value={props.document.packages3}
-              onChange={e => props.setPackages3(e.target.value)}
+              onChange={props.setPackages3}
             />
-            <input
+            <InputField
               value={props.document.packages4}
-              onChange={e => props.setPackages4(e.target.value)}
+              onChange={props.setPackages4}
             />
-            <input
+            <InputField
               value={props.document.packages5}
-              onChange={e => props.setPackages5(e.target.value)}
+              onChange={props.setPackages5}
             />
           </div>
           <div className="ocean-bill-gross-weight">
             <div className="label">GROSS WEIGHT</div>
-            <input
+            <InputField
               value={props.document.grossWeight1}
-              onChange={e => props.setGrossWeight1(e.target.value)}
+              onChange={props.setGrossWeight1}
             />
-            <input
+            <InputField
               value={props.document.grossWeight2}
-              onChange={e => props.setGrossWeight2(e.target.value)}
+              onChange={props.setGrossWeight2}
             />
-            <input
+            <InputField
               value={props.document.grossWeight3}
-              onChange={e => props.setGrossWeight3(e.target.value)}
+              onChange={props.setGrossWeight3}
             />
-            <input
+            <InputField
               value={props.document.grossWeight4}
-              onChange={e => props.setGrossWeight4(e.target.value)}
+              onChange={props.setGrossWeight4}
             />
-            <input
+            <InputField
               value={props.document.grossWeight5}
-              onChange={e => props.setGrossWeight5(e.target.value)}
+              onChange={props.setGrossWeight5}
             />
           </div>
           <div className="ocean-bill-measurement">
             <div className="label">MEASUREMENT</div>
-            <input
+            <InputField
               value={props.document.measurement1}
-              onChange={e => props.setMeasurement1(e.target.value)}
+              onChange={props.setMeasurement1}
             />
-            <input
+            <InputField
               value={props.document.measurement2}
-              onChange={e => props.setMeasurement2(e.target.value)}
+              onChange={props.setMeasurement2}
             />
-            <input
+            <InputField
               value={props.document.measurement3}
-              onChange={e => props.setMeasurement3(e.target.value)}
+              onChange={props.setMeasurement3}
             />
-            <input
+            <InputField
               value={props.document.measurement4}
-              onChange={e => props.setMeasurement4(e.target.value)}
+              onChange={props.setMeasurement4}
             />
-            <input
+            <InputField
               value={props.document.measurement5}
-              onChange={e => props.setMeasurement5(e.target.value)}
+              onChange={props.setMeasurement5}
             />
           </div>
         </div>
         <div className="ocean-bill-declared-value">
-          <input
+          <InputField
             value={props.document.declaredValue}
-            onChange={e => props.setDeclaredValue(e.target.value)}
+            onChange={props.setDeclaredValue}
           />
           <div className="label-group">
             <div className="label">DECLARED VALUE</div>
@@ -234,219 +230,196 @@ const OceanBillEditorDisplay = props => (
           <div className="label">
             TOTAL NO. OF CONTAINERS OR PACKAGES (IN WORDS)
           </div>
-          <input
+          <InputField
             value={props.document.totalContainersPackages}
-            onChange={e => props.setTotalContainersPackages(e.target.value)}
+            onChange={props.setTotalContainersPackages}
           />
         </div>
         <div className="ocean-bill-charges">
           <div className="ocean-bill-freight-and-charges">
             <div className="label">FREIGHT AND CHARGES</div>
-            <input
+            <InputField
               value={props.document.charge1}
-              onChange={e => props.setCharge1(e.target.value)}
+              onChange={props.setCharge1}
             />
-            <input
+            <InputField
               value={props.document.charge2}
-              onChange={e => props.setCharge2(e.target.value)}
+              onChange={props.setCharge2}
             />
-            <input
+            <InputField
               value={props.document.charge3}
-              onChange={e => props.setCharge3(e.target.value)}
+              onChange={props.setCharge3}
             />
-            <input
+            <InputField
               value={props.document.charge4}
-              onChange={e => props.setCharge4(e.target.value)}
+              onChange={props.setCharge4}
             />
-            <input
+            <InputField
               value={props.document.charge5}
-              onChange={e => props.setCharge5(e.target.value)}
+              onChange={props.setCharge5}
             />
           </div>
           <div className="ocean-bill-revenue-tons">
             <div className="label">REVENUE TONS</div>
-            <input
+            <InputField
               value={props.document.revenueTons1}
-              onChange={e => props.setRevenueTons1(e.target.value)}
+              onChange={props.setRevenueTons1}
             />
-            <input
+            <InputField
               value={props.document.revenueTons2}
-              onChange={e => props.setRevenueTons2(e.target.value)}
+              onChange={props.setRevenueTons2}
             />
-            <input
+            <InputField
               value={props.document.revenueTons3}
-              onChange={e => props.setRevenueTons3(e.target.value)}
+              onChange={props.setRevenueTons3}
             />
-            <input
+            <InputField
               value={props.document.revenueTons4}
-              onChange={e => props.setRevenueTons4(e.target.value)}
+              onChange={props.setRevenueTons4}
             />
-            <input
+            <InputField
               value={props.document.revenueTons5}
-              onChange={e => props.setRevenueTons5(e.target.value)}
+              onChange={props.setRevenueTons5}
             />
           </div>
           <div className="ocean-bill-rate">
             <div className="label">RATE</div>
-            <input
+            <InputField
               value={props.document.rate1}
-              onChange={e => props.setRate1(e.target.value)}
+              onChange={props.setRate1}
             />
-            <input
+            <InputField
               value={props.document.rate2}
-              onChange={e => props.setRate2(e.target.value)}
+              onChange={props.setRate2}
             />
-            <input
+            <InputField
               value={props.document.rate3}
-              onChange={e => props.setRate3(e.target.value)}
+              onChange={props.setRate3}
             />
-            <input
+            <InputField
               value={props.document.rate4}
-              onChange={e => props.setRate4(e.target.value)}
+              onChange={props.setRate4}
             />
-            <input
+            <InputField
               value={props.document.rate5}
-              onChange={e => props.setRate5(e.target.value)}
+              onChange={props.setRate5}
             />
           </div>
           <div className="ocean-bill-per">
             <div className="label">PER</div>
-            <input
-              value={props.document.per1}
-              onChange={e => props.setPer1(e.target.value)}
-            />
-            <input
-              value={props.document.per2}
-              onChange={e => props.setPer2(e.target.value)}
-            />
-            <input
-              value={props.document.per3}
-              onChange={e => props.setPer3(e.target.value)}
-            />
-            <input
-              value={props.document.per4}
-              onChange={e => props.setPer4(e.target.value)}
-            />
-            <input
-              value={props.document.per5}
-              onChange={e => props.setPer5(e.target.value)}
-            />
+            <InputField value={props.document.per1} onChange={props.setPer1} />
+            <InputField value={props.document.per2} onChange={props.setPer2} />
+            <InputField value={props.document.per3} onChange={props.setPer3} />
+            <InputField value={props.document.per4} onChange={props.setPer4} />
+            <InputField value={props.document.per5} onChange={props.setPer5} />
           </div>
           <div className="ocean-bill-prepaid">
             <div className="label">PREPAID</div>
-            <input
+            <InputField
               value={props.document.prepaid1}
-              onChange={e => props.setPrepaid1(e.target.value)}
+              onChange={props.setPrepaid1}
             />
-            <input
+            <InputField
               value={props.document.prepaid2}
-              onChange={e => props.setPrepaid2(e.target.value)}
+              onChange={props.setPrepaid2}
             />
-            <input
+            <InputField
               value={props.document.prepaid3}
-              onChange={e => props.setPrepaid3(e.target.value)}
+              onChange={props.setPrepaid3}
             />
-            <input
+            <InputField
               value={props.document.prepaid4}
-              onChange={e => props.setPrepaid4(e.target.value)}
+              onChange={props.setPrepaid4}
             />
-            <input
+            <InputField
               value={props.document.prepaid5}
-              onChange={e => props.setPrepaid5(e.target.value)}
+              onChange={props.setPrepaid5}
             />
           </div>
           <div className="ocean-bill-collect">
             <div className="label">COLLECT</div>
-            <input
+            <InputField
               value={props.document.collect1}
-              onChange={e => props.setCollect1(e.target.value)}
+              onChange={props.setCollect1}
             />
-            <input
+            <InputField
               value={props.document.collect2}
-              onChange={e => props.setCollect2(e.target.value)}
+              onChange={props.setCollect2}
             />
-            <input
+            <InputField
               value={props.document.collect3}
-              onChange={e => props.setCollect3(e.target.value)}
+              onChange={props.setCollect3}
             />
-            <input
+            <InputField
               value={props.document.collect4}
-              onChange={e => props.setCollect4(e.target.value)}
+              onChange={props.setCollect4}
             />
-            <input
+            <InputField
               value={props.document.collect5}
-              onChange={e => props.setCollect5(e.target.value)}
+              onChange={props.setCollect5}
             />
           </div>
         </div>
         <div className="ocean-bill-payable-row">
           <div className="ocean-bill-exchange-rate">
             <div className="label">EXCHANGE RATE</div>
-            <input
+            <InputField
               value={props.document.exchangeRate}
-              onChange={e => props.setExchangeRate(e.target.value)}
+              onChange={props.setExchangeRate}
             />
           </div>
           <div className="ocean-bill-prepaid-at">
             <div className="label">PREPAID AT</div>
-            <input
+            <InputField
               value={props.document.prepaidAt}
-              onChange={e => props.setPrepaidAt(e.target.value)}
+              onChange={props.setPrepaidAt}
             />
           </div>
           <div className="ocean-bill-payable-at">
             <div className="label">PAYABLE AT</div>
-            <input
+            <InputField
               value={props.document.payableAt}
-              onChange={e => props.setPayableAt(e.target.value)}
+              onChange={props.setPayableAt}
             />
           </div>
           <div className="ocean-bill-place-and-date-of-issue">
             <div className="label">PLACE AND DATE OF ISSUE</div>
-            <input
+            <InputField
               value={props.document.placeAndDateOfIssue}
-              onChange={e => props.setPlaceAndDateOfIssue(e.target.value)}
+              onChange={props.setPlaceAndDateOfIssue}
             />
           </div>
         </div>
         <div className="ocean-bill-total-prepaid-row">
           <div className="ocean-bill-total-prepaid-in-local-currency">
             <div className="label">TOTAL PREPAID IN LOCAL CURRENCY</div>
-            <input
+            <InputField
               value={props.document.totalPrepaidInLocalCurrency}
-              onChange={e =>
-                props.setTotalPrepaidInLocalCurrency(e.target.value)
-              }
+              onChange={props.setTotalPrepaidInLocalCurrency}
             />
           </div>
           <div className="ocean-bill-number-of-waybills">
             <div className="label">NUMBER OF WAYBILLS</div>
-            <input
+            <InputField
               value={props.document.numberOfWaybills}
-              onChange={e => props.setNumberOfWaybills(e.target.value)}
+              onChange={props.setNumberOfWaybills}
             />
           </div>
         </div>
         <div className="ocean-bill-shipped-on-board-the-vessel">
           <div className="label">SHIPPED ON BOARD THE VESSEL</div>
-          <input
+          <InputField
             value={props.document.shippedOnBoardTheVessel}
-            onChange={e => props.setShippedOnBoardTheVessel(e.target.value)}
+            onChange={props.setShippedOnBoardTheVessel}
           />
         </div>
         <div className="ocean-bill-date">
           <div className="label">DATE</div>
-          <input
-            value={props.document.date}
-            onChange={e => props.setDate(e.target.value)}
-          />
+          <InputField value={props.document.date} onChange={props.setDate} />
         </div>
         <div className="ocean-bill-by">
           <div className="label">BY</div>
-          <input
-            value={props.document.by}
-            onChange={e => props.setBy(e.target.value)}
-          />
+          <InputField value={props.document.by} onChange={props.setBy} />
         </div>
       </div>
       <OceanBillButton document={props.document} />
