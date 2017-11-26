@@ -1,8 +1,5 @@
 import {} from 'meteor/pascoual:pdfkitx';
 
-import { weightFormat } from '../utils/formatUtils';
-import { fitLines } from '../utils/documentUtils';
-
 const PDFDocument = global.PDFDocument;
 const blobStream = global.blobStream;
 

@@ -32,6 +32,7 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "expect.js": "^0.3.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^21.2.1",
     "raf": "^3.4.0",
     "react": "^16.1.1",
