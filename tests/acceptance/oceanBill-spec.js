@@ -33,7 +33,7 @@ AES ITN:X20090914033918
 CONTAINER NO.
 NYKU5724883
 CFS/CFS`,
-      packages1: '7CTN',
+      packages1: '7 CTN',
       grossWeight1: '109.43 KGS',
       measurement: '1.30 CBM',
       totalContainersPackages: 'SEVEN CARTONS ONLY',

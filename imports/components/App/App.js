@@ -10,7 +10,6 @@ export const store = createStore(reducers, {});
 const App = () => (
   <Provider store={store}>
     <div>
-      Freight For All
       <OceanBillEditor />
     </div>
   </Provider>

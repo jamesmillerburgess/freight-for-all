@@ -15,8 +15,8 @@ const defaultTerms =
   "In consideration of Carrier's acceptance of the " +
   'Containers or packages, the Shipper (on its own behalf ' +
   'and on behalf of all persons included in the definition ' +
-  'of "Merchant" contained in the applicable Freight For All ' +
-  'standard from bill of lading) agrees that all terms on ' +
+  'of "Merchant" contained in the applicable ' +
+  'standard form bill of lading) agrees that all terms on ' +
   'the face and back hereof apply. THE MERCHANT SPECIFICALLY ' +
   'AGREES THAT ITS ATTENTION HAS BEEN DRAWN TO AND THAT IT ' +
   'HAS ACCEPTED THE APPLICABLE FREIGHT FOR ALL STANDARD FORM ' +
@@ -95,7 +95,8 @@ const mapStateToProps = ({ oceanBillEditor }) => ({
     collect4: oceanBillEditor.collect4 || '',
     collect5: oceanBillEditor.collect5 || '',
     exchangeRate: oceanBillEditor.exchangeRate || '',
-    prepaidAt: oceanBillEditor.payableAt || '',
+    prepaidAt: oceanBillEditor.prepaidAt || '',
+    payableAt: oceanBillEditor.payableAt || '',
     placeAndDateOfIssue: oceanBillEditor.placeAndDateOfIssue || '',
     totalPrepaidInLocalCurrency:
       oceanBillEditor.totalPrepaidInLocalCurrency || '',

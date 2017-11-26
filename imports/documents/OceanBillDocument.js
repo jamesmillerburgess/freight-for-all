@@ -154,7 +154,7 @@ const OceanBillDocument = (shipment, cb) => {
   doc
     .font('title')
     .fontSize(26)
-    .text(shipment.carrier, page.rightColumnStart, page.margin + 30, {
+    .text(shipment.carrier, page.rightColumnStart, page.margin + 27, {
       width: page.columnWidth,
       align: 'center',
     });
@@ -162,16 +162,10 @@ const OceanBillDocument = (shipment, cb) => {
   doc
     .font('title')
     .fontSize(18)
-    .text(shipment.billType, page.rightColumnStart, page.margin + 60, {
+    .text(shipment.billType, page.rightColumnStart, page.margin + 85, {
       width: page.columnWidth,
       align: 'center',
     });
-  if (shipment.billType === 'Waybill') {
-    doc.text('NON-NEGOTIABLE', page.rightColumnStart, page.margin + 78, {
-      width: page.columnWidth,
-      align: 'center',
-    });
-  }
 
   doc
     .font('static')
@@ -179,7 +173,6 @@ const OceanBillDocument = (shipment, cb) => {
     .text(shipment.terms, page.rightColumnStart, page.margin + 110, {
       width: page.columnWidth,
       align: 'justify',
-      indent: 10,
     });
 
   doc
@@ -479,7 +472,7 @@ const OceanBillDocument = (shipment, cb) => {
       page.margin + 80,
       page.margin + 671
     )
-    .text(shipment.numberOfWaybills, page.margin + 80, page.margin + 671)
+    .text(shipment.numberOfWaybills, page.margin + 220, page.margin + 671)
     .stroke()
     .fontSize(7)
     .font('label')
@@ -492,15 +485,7 @@ const OceanBillDocument = (shipment, cb) => {
     .text(shipment.date, page.margin + 1, page.margin + 731)
     .text(shipment.by, page.margin + 1, page.margin + 761);
 
-  // if (remainingDesc.length > 0) {
-  //   doc
-  //     .addPage()
-  //     .font('value')
-  //     .fontSize(10)
-  //     .text('-----CONTINUATION PAGE-----', { align: 'center' })
-  //     .text(remainingDesc);
-  // }
-  doc.write(`BL-${shipment.reference}.pdf`);
+  doc.write(`BL-${shipment.billOfLadingNumber}.pdf`);
 };
 
 export default OceanBillDocument;
